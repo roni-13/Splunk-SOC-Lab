@@ -1,4 +1,4 @@
-# Screenshots
+``` # Screenshots
 
 This folder contains screenshots from my SOC lab investigations using Splunk.
 
@@ -14,12 +14,12 @@ Detect failed authentication attempts in Windows environment using Splunk.
 
 ### SPL Query
 
-```spl
+spl
 index=windows EventCode=4625
-| table _time Account_Name Source_Network_Address Failure_Reason
+| table _time Account_Name Source_Network_Address Failure_Reason```
 
 
-## 2. Top Failed Login Users
+```## 2. Top Failed Login Users
 
 ### Objective
 
@@ -27,13 +27,13 @@ Identify users with multiple failed login attempts and analyze authentication fa
 
 ### SPL Query
 
-```spl
+spl
 index=windows EventCode=4625
 | stats count by Account_Name
-| sort -count
+| sort -count```
 
 
-## 3. Sysmon Process Creation Monitoring
+```## 3. Sysmon Process Creation Monitoring
 
 ### Objective
 
@@ -41,6 +41,6 @@ Monitor process creation activity and identify suspicious execution behavior usi
 
 ### SPL Query
 
-```spl
+spl
 index=sysmon EventCode=1
-| table _time Image CommandLine User
+| table _time Image CommandLine User```
